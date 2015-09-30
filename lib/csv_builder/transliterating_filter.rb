@@ -49,7 +49,7 @@ class CsvBuilder::TransliteratingFilter
     attr_accessor :output_encoding
 
     def convert_row(row)
-      row.map { |value| value.to_s.encode(output_encoding, :undef => :replace) }
+      row.map { |value| value ? value.to_s.encode(output_encoding, :undef => :replace) : value }
     end
   end
 end
