@@ -102,7 +102,7 @@ module CsvBuilder # :nodoc:
             response.headers['Content-Disposition'] = "attachment; filename=\\"\#{@filename}\\""
             response.headers['Expires'] = "0"
           else
-            response.headers["Content-Type"] ||= 'text/csv'
+            response.headers["Content-Type"] ||= 'text/plain'
             response.headers["Content-Disposition"] = "attachment; filename=\\"\#{@filename}\\""
             response.headers["Content-Transfer-Encoding"] = "binary"
           end
